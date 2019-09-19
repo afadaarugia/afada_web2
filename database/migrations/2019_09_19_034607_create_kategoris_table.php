@@ -14,13 +14,11 @@ class CreateKategorisTable extends Migration
     public function up()
     {
         Schema::create('kategoris', function (Blueprint $table) {
-            $table->bigIncrements('id')->primary();
+            $table->bigIncrements('id');
             $table->string('nama');
             $table->text('keterangan');
-            $table->timestamp('created_at')->unique();
-            $table->timestamp('updated_at')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->int('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
