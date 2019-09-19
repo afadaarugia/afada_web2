@@ -60,6 +60,7 @@
 
                             <div class="col-md-6">
                                {!! Captcha::img() !!}
+                               <a href="#" id="regen-captcha">Try different captcha</a>
                             </div>
                         </div>
 
@@ -114,14 +115,18 @@
 </div>
 </body>
 <script type="text/javascript">
-$('#refresh').click(function(){
-  $.ajax({
-     type:'GET',
-     url:'refreshcaptcha',
-     success:function(data){
-        $(".captcha span").html(data.captcha);
-     }
-  });
+$('#regen-captcha').on('click', function(e){
+    e.preventDefault();
+ 
+    var anchor = $(this);
+    var captcha = anchor.prev('img');
+ 
+    $.ajax({
+        type: "GET",
+        url: '/ajax_regen_captcha',
+    }).done(function( msg ) {
+        captcha.attr('src', msg);
+    });
 });
 </script>
 @endsection

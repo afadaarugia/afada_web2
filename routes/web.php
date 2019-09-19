@@ -20,7 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
-
+Route::get('ajax_regen_captcha', function(){
+    return captcha_src();
+});
 Route::get('/home', 'HomeController@index')->name('home');
 //captcha
 Route::get('createcaptcha', 'CaptchaController@create');
