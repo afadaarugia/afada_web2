@@ -1,11 +1,7 @@
 @extends('layouts.app')
 <head>
 <title>Login</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">   
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous">
+   
 </head>
 <body>
 @section('content')
@@ -59,8 +55,9 @@
                             <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Captcha') }}</label>
 
                             <div class="col-md-6">
-                               {!! Captcha::img() !!}
-                               <a href="#" id="regen-captcha">Try different captcha</a>
+                               {!! Captcha::img('flat') !!}
+                               <input id="captcha" class="form-control" type="text" name="captcha" data-validation="required" >
+                                <a href="javascript:void(0)" onclick="refreshCaptcha()">Refresh</a>
                             </div>
                         </div>
 

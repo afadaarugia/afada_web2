@@ -50,4 +50,8 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function refereshCapcha(){
+        return captcha_img('flat');
+    }
 }
