@@ -2,6 +2,8 @@
 
 @section('content')
 <body>
+<a href="{!! route('kategori_artikel.create') !!}" class="btn btn-primary">Tambah Data</a>
+
     <table border="1">
         <tr>
             <td>id</td>

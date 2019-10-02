@@ -12,4 +12,24 @@ class KategoriBeritaController extends Controller
 
         return view ('kategori_berita.index', compact('kategoriBerita'));
     }
+
+    public function show($id){
+        $kategoriBerita=KategoriBerita::find($id);
+  
+        return view('kategori_berita.show', compact('kategori_berita'));
+    }
+  
+  
+    public function create(){
+        $kategoriBerita=KategoriBerita::pluck('nama','id');
+        return view('kategori_berita.create', compact('kategoriBerita'));
+    }
+  
+    public function store(Request $request){
+        $input=$request->all();
+  
+        KategoriBerita::create($input);
+  
+        return redirect(route ('kategori_berita.index'));
+    }
 }

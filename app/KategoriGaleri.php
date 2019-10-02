@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class KategoriGaleri extends Model
 {
     //
-    protected $table="kategori_artikel";
+    protected $table="kategori_galeri";
     protected $fillable = [
-        'nama'
+        'nama','users_id'
     ];
 }

@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         //captcha
         Mews\Captcha\CaptchaServiceProvider::class,
+    
 
         /*
          * Package Service Providers...
@@ -230,6 +231,8 @@ return [
 
         //captcha
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        //collective
+       
     ],
 
 ];

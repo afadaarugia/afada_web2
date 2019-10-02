@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class KategoriPengumuman extends Model
 {
     //
-    protected $table="kategori_artikel";
+    protected $table="kategori_pengumuman";
     protected $fillable = [
-        'nama'
+        'nama','users_id'
     ];
 }

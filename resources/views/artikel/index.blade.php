@@ -1,14 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<body>
-    <table border="1">
-        <tr>
-            <td>id</td>
-            <td>judul</td>
-            <td>isi</td>
-            <td>users_id</td>
-        </tr>
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+            <a href="{!! route('artikel.create') !!}" class="btn btn-primary">Tambah Data</a>
+                <div class="card">
+                    
+                    <table border="1">
+                        <tr>
+                            <td>id</td>
+                            <td>judul</td>
+                            <td>isi</td>
+                            <td>users_id</td>
+                            <td>opsi</td>
+                        </tr>
 
         @foreach($artikel as $item)
 
@@ -17,8 +23,13 @@
             <td>{!! $item->judul !!}</td>
             <td>{!! $item->isi !!}</td>
             <td>{!! $item->users_id !!}</td>
+            <td><button type="submit" class="btn btn-primary">{{ __('Ubah') }}</button></td>
+            <td><button type="submit" class="btn btn-primary">{{ __('Hapus') }}</button></td>
         </tr>
         @endforeach
     </table>
-</body>
+    </div>
+    </div>
+    </div>
+    </div>
 @endsection

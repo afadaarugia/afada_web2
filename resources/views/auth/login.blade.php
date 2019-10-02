@@ -56,7 +56,7 @@
 
                             <div class="col-md-6">
                                {!! Captcha::img('flat') !!}
-                               <input id="captcha" class="form-control" type="text" name="captcha" data-validation="required" >
+                               <button id="captcha" class="btn" type="text" name="captcha" data-validation="required" >
                                 <a href="javascript:void(0)" onclick="refreshCaptcha()">Refresh</a>
                             </div>
                         </div>

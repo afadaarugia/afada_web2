@@ -49359,6 +49359,17 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+$('#regen-captcha').on('click', function (e) {
+  e.preventDefault();
+  var anchor = $(this);
+  var captcha = anchor.prev('img');
+  $.ajax({
+    type: "GET",
+    url: '/ajax_regen_captcha'
+  }).done(function (msg) {
+    captcha.attr('src', msg);
+  });
+});
 
 /***/ }),
 
