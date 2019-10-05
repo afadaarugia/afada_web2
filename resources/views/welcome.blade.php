@@ -20,6 +20,46 @@
                 margin: 0;
             }
 
+            .dropbtn {
+                background-color: #4CAF50;
+                color: white;
+                padding: 16px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+                }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+                }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                }
+
+            .dropdown-content a:hover {background-color: #f1f1f1}
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+                }
+
+            .dropdown:hover .dropbtn {
+                background-color: #3e8e41;
+                }
+
             .full-height {
                 height: 100vh;
             }
@@ -81,18 +121,23 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    FUN IS INDEED
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Categories</a>
-                    <a href="/mahasiswa">Mahasiswa</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="dropdown">
+                    <a>CATEGORIES</a>
+                        <div class="dropdown-content">
+                            <a href="/kategori_artikel">Artikel</a>
+                            <a href="/kategori_berita">Berita</a>
+                            <a href="/kategori_galeri">Galeri</a>
+                            <a href="/kategori_pengumuman">Pengumuman</a>
+                        </div>
+                </div>
+                    <a href="/mahasiswa">Artikel</a>
+                    <a href="/berita">Berita</a>
+                    <a href="/galeri">Galeri</a>
+                    <a href="/pengumuman">Pengumuman</a>
                 </div>
             </div>
         </div>

@@ -52,19 +52,22 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Captcha') }}</label>
-
-                            <div class="col-md-6">
-                               {!! Captcha::img('flat') !!}
-                               <button id="captcha" class="btn" type="text" name="captcha" data-validation="required" >
-                                <a href="javascript:void(0)" onclick="refreshCaptcha()">Refresh</a>
+                            <div class="offset-md-4 col-md-6">
                             </div>
                         </div>
 
+                       
+
                         <div class="form-group row">
-                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('') }}</label>
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Captcha') }}</label>
 
                             <div class="col-md-6">
+                            <img src="{{captcha_src('flat')}}" onclick="this.src='/captcha/flat?'+Math.random()" id="captchaCode" alt="" class="captcha">
+                   
+                                <a rel="nofollow" href="javascript:;" onclick="document.getElementById('captchaCode').src='captcha/flat?'+Math.random()" class="refresh">
+                                                        
+                                    <button type="button" class="btn btn-info btn-refresh">Refresh</button>
+                                </a>
                                 <input id="captcha" type="text" class="form-control @error('captcha') is-invalid @enderror" name="captcha" required>
 
                                 @error('captcha')
@@ -111,19 +114,23 @@
     </div>
 </div>
 </body>
+
+@endsection
+
+@section('scripts')
 <script type="text/javascript">
-$('#regen-captcha').on('click', function(e){
+    $('#regen-captcha').on('click', function(e){
     e.preventDefault();
- 
+
     var anchor = $(this);
     var captcha = anchor.prev('img');
- 
-    $.ajax({
+
+    $.ajax((
         type: "GET",
-        url: '/ajax_regen_captcha',
-    }).done(function( msg ) {
-        captcha.attr('src', msg);
+        url: "/ajax_regen_captcha",
+    )).done(function(msg){
+        captcha.attr('src',msg);
     });
-});
+    });
 </script>
-@endsection
+@endsection 

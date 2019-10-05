@@ -75,7 +75,4 @@ Route::get('ajax_regen_captcha', function(){
 });
 Route::get('/home', 'HomeController@index')->name('home');
 //captcha
-Route::get('createcaptcha', 'CaptchaController@create');
-Route::post('captcha', 'CaptchaController@captchaValidate');
-Route::get('refreshcaptcha', 'CaptchaController@refreshCaptcha');
 Route::get('/refereshcapcha', 'HelperController@refereshCapcha');
