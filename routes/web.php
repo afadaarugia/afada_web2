@@ -68,6 +68,7 @@ Route::post('/artikel', 'ArtikelController@store')->name('artikel.store');
 Route::post('/artikel/{id}', 'ArtikelController@show')->name('artikel.show');
 Route::get('/artikel/{id}/edit', 'ArtikelController@edit')->name('artikel.edit');
 Route::patch('/artikel/{id}', 'ArtikelController@update')->name('artikel.update'); 
+Route::delete('/artikel/{id}', 'ArtikelController@destroy')->name('artikel.destroy');
 
 //crud galeri
 Route::get('/galeri', 'GaleriController@index')->name('galeri.index');
@@ -76,6 +77,8 @@ Route::post('/galeri', 'GaleriController@store')->name('galeri.store');
 Route::post('/galeri/{id}', 'GaleriController@show')->name('galeri.show');
 Route::get('/galeri/{id}/edit', 'GaleriController@edit')->name('galeri.edit');
 Route::patch('/galeri/{id}', 'GaleriController@update')->name('galeri.update'); 
+Route::delete('/galeri/{id}', 'GaleriController@destroy')->name('galeri.destroy');
+
 
 //crud berita
 Route::get('/berita', 'BeritaController@index')->name('berita.index');
@@ -84,6 +87,8 @@ Route::post('/berita', 'BeritaController@store')->name('berita.store');
 Route::post('/berita/{id}', 'BeritaController@show')->name('berita.show');
 Route::get('/berita/{id}/edit', 'BeritaController@edit')->name('berita.edit');
 Route::patch('/berita/{id}', 'BeritaController@update')->name('berita.update'); 
+Route::delete('/berita/{id}', 'BeritaController@destroy')->name('berita.destroy');
+
 
 //crud pengumuman
 Route::get('/pengumuman', 'PengumumanController@index')->name('pengumuman.index');
@@ -92,6 +97,8 @@ Route::post('/pengumuman', 'PengumumanController@store')->name('pengumuman.store
 Route::get('/pengumuman/{id}', 'PengumumanController@show')->name('pengumuman.show');
 Route::get('/pengumuman/{id}/edit', 'PengumumanController@edit')->name('pengumuman.edit');
 Route::patch('/pengumuman/{id}', 'PengumumanController@update')->name('pengumuman.update'); 
+Route::delete('/pengumuman/{id}', 'PengumumanController@destroy')->name('pengumuman.destroy');
+
 
 Auth::routes();
 Route::get('ajax_regen_captcha', function(){

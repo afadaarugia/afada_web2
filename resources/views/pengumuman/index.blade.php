@@ -25,6 +25,9 @@
             <td>{!! $item->users_id !!}</td>
             <td><button type="submit" class="btn btn-primary">{{ __('Ubah') }}</button></td>
             <td><button type="submit" class="btn btn-primary">{{ __('Hapus') }}</button></td>
+            {!! Form::open(['route'=> ['pengumuman.destroy', $item->id], 'method'=>'delete'])!!}
+                                    {!! Form::submit('hapus', ['class'=>'btn btn-sm btn-danger', 'on-click'=>"return confirm('yakin?');"]) !!}
+                                {!! Form::close() !!}
         </tr>
         @endforeach
     </table>

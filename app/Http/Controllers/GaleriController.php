@@ -55,4 +55,14 @@ class GaleriController extends Controller
     
         return redirect(route('galeri.index'));
       }
+
+      public function destroy($id){
+        $galeri=galeri::find($id);
+    
+        if(empty($galeri)){
+          return redirect (route('galeri.index'));
+        }
+        $galeri->delete();
+        return redirect(route('galeri.index'));
+      }
 }
