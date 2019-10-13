@@ -7,25 +7,31 @@
             <a href="{!! route('artikel.create') !!}" class="btn btn-primary">Tambah Data</a>
                 <div class="card">
                     
-                    <table border="1">
+                    <table class ="table">
+                    <thead>
                         <tr>
-                            <td>id</td>
-                            <td>judul</td>
-                            <td>isi</td>
-                            <td>users_id</td>
-                            <td>opsi</td>
+                            <th scope="col">id</th>
+                            <th scope="col">judul</th>
+                            <th scope="col">isi</th>
+                            <th scope="col">users id</th>
+                            <th scope="col">kategori artikel id</th>
+                            <th scope="col">opsi</th>
                         </tr>
+                    </thead>
 
         @foreach($artikel as $item)
-
-        <tr>
-            <td>{!! $item->id !!}</td>
-            <td>{!! $item->judul !!}</td>
-            <td>{!! $item->isi !!}</td>
-            <td>{!! $item->users_id !!}</td>
-            <td><button type="submit" class="btn btn-primary">{{ __('Ubah') }}</button></td>
-            <td><button type="submit" class="btn btn-primary">{{ __('Hapus') }}</button></td>
-        </tr>
+                <tbody>
+                    <tr>
+                        <td>{!! $item->id !!}</td>
+                        <td>{!! $item->judul !!}</td>
+                        <td>{!! $item->isi !!}</td>
+                        <td>{!! $item->users_id !!}</td>
+                        <td>{!! $item->kategori_artikel_id !!}</td>
+                        <td><a href="{!! route('artikel.show', [$item->id]) !!}" class="btn btn-sm btn-success">Lihat</a>
+                        <a href="{!! route('artikel.edit', [$item->id]) !!}" class="btn btn-sm btn-warning">Ubah</a>
+                        </td>
+                    </tr>
+                </tbody>
         @endforeach
     </table>
     </div>

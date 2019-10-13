@@ -12,6 +12,7 @@
                             <td>judul</td>
                             <td>isi</td>
                             <td>users_id</td>
+                            <td>Opsi</td>
                         </tr>
 
                         @foreach($berita as $item)

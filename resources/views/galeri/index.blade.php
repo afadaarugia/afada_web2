@@ -9,6 +9,8 @@
             <td>nama</td>
             <td>keterangan</td>
             <td>path</td>
+            <td>Opsi</td>
+            
         </tr>
 
         @foreach($galeri as $item)
@@ -18,6 +20,8 @@
             <td>{!! $item->nama !!}</td>
             <td>{!! $item->keterangan !!}</td>
             <td>{!! $item->path !!}</td>
+            <td><button type="submit" class="btn btn-primary">{{ __('Ubah') }}</button></td>
+            <td><button type="submit" class="btn btn-primary">{{ __('Hapus') }}</button></td>
         </tr>
         @endforeach
     </table>

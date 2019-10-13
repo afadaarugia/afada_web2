@@ -12,8 +12,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #000000;
+                color: #C0C0C0;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -134,7 +134,7 @@
                             <a href="/kategori_pengumuman">Pengumuman</a>
                         </div>
                 </div>
-                    <a href="/mahasiswa">Artikel</a>
+                    <a href="/artikel">Artikel</a>
                     <a href="/berita">Berita</a>
                     <a href="/galeri">Galeri</a>
                     <a href="/pengumuman">Pengumuman</a>
